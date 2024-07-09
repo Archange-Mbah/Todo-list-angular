@@ -2,8 +2,18 @@
     <div class="box">
         <h1> TodoList</h1>
         <div class="info">
-        <input type="text" placeholder="Add Todo" >
-        <button>Add</button>
-    </div>
+            <!-- ngModel um variablen Werten zu ändern -->
+        <input type="text" placeholder="Add Todo" [(ngModel)]="newTodo">
+        <!-- we invoke the addTodo() so we call it with parantheses-->
+        <button (click)="addTodo()">Add</button>
+       </div>
+       <div class="list">
+        <div *ngFor="let todo of todos;let i=index">
+            <div  class="element">
+            <p>{{todos[i]}}</p>
+            <button (click)="delete(i)" style="background-color:red"> Delete</button>
+            </div>
+        </div>
+     </div>
     </div>
 </div>

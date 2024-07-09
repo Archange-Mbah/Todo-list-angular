@@ -2,15 +2,26 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    padding-top: 20%;
 }
 .box{
-    padding-top: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: goldenrod;
 }
 .info{
     display: flex;
     flex-direction: row;
+}
+.list{
+    background-color: rgb(217, 161, 161);
+    width: 100%;
+}
+.element{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
