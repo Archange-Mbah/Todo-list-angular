@@ -3,17 +3,26 @@
         <h1> TodoList</h1>
         <div class="info">
             <!-- ngModel um variablen Werten zu ändern -->
-        <input type="text" placeholder="Add Todo" [(ngModel)]="newTodo">
+        <input type="text" placeholder="Add Todo or EnterPassword" [(ngModel)]="newTodo">
         <!-- we invoke the addTodo() so we call it with parantheses-->
-        <button (click)="addTodo()">Add</button>
+        <button  type="submit" (click)="addTodo()" >Add</button>
        </div>
+       @if(showList()){
+         @if(isListEmpty()){
+            <h2>The list is Empty</h2>
+             
+         }
+         @else{
        <div class="list">
         <div *ngFor="let todo of todos;let i=index">
             <div  class="element">
             <p>{{todos[i]}}</p>
-            <button (click)="delete(i)" style="background-color:red"> Delete</button>
+            <button (click)="delete(i)" style="background-color:red" > Delete</button>
             </div>
         </div>
      </div>
+    }
+    }
     </div>
+
 </div>

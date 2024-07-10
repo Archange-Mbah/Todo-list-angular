@@ -13,10 +13,13 @@ export class HomeComponent {
   newTodo: string="";
   todos: string[]=[];
 
+
   addTodo() {
-    if (this.newTodo.trim()) {
+    if (this.newTodo.trim() && this.newTodo!=="Archange") {
       this.todos.push(this.newTodo.trim());
       this.newTodo = '';
+  
+      
     }
     console.log(this.todos);
   }
@@ -24,6 +27,21 @@ export class HomeComponent {
   delete(index:number){
     this.todos.splice(index, 1);
   }
-}
 
+  showList(){
+    var temp=this.newTodo;
+    if(temp=="Archange"){
+      this.newTodo="";
+      return true;
+    }
+    return false;
+  }
+
+  isListEmpty(){
+    return this.todos.length===0;
+  }
+  resetTodo(){
+    this.newTodo="";
+}
+}
 
